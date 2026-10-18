@@ -41,3 +41,51 @@ int main()
                     printf("No solution \n");
                 }
                 break;
+            case 2:
+                printf("Enter a number (0 to 12)");
+                scanf("%d",&n);
+                if(n<0 || n>12)
+                {
+                    printf("Invalid enter(0 to 12)");
+                    break;
+                }
+                else
+                {
+                    fact=1;
+                    for(i=1;i<=n;i++)
+                    {
+                        fact*=i;
+                    }
+                    printf("Factorial of %d= %d \n",n,fact);
+                }
+                break;
+
+            case 3:
+                printf("Enter the values");
+                scanf("%f %f %f",&a,&b,&c);
+                if(a==0)
+                {
+                    printf("not a quadratic");
+                    break;
+                }
+                D=b*b-4*a*c;
+                if(D>0)
+                {
+                    r1=(-b+sqrt(D))/2*a;
+                    r2=(-b-sqrt(D))/2*a;
+                    printf("Two distinct real roots: %f and %f \n",r1,r2);
+                }
+                else if(D==0)
+                {
+                    r1=-b/(2*a);
+                    printf("Equal roots:%f and %f \n",r1,r1);
+                }
+                else
+                {
+                    printf("no real roots or imaginary roots");
+                }
+                break;
+        }
+    }
+    return 0;
+}
